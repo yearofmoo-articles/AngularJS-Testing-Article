@@ -1,10 +1,11 @@
 {
-  "name": "YOM-AngularJS-Testing-Article",
+  "name": "yom-angularjs-testing-article",
   "version": "0.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/matsko/YOM-AngularJS-Testing-Article"
   },
+  "homepage": "http://www.yearofmoo.com",
   "dependencies" : {
     "testacular"  : "0.4.0",
     "chai"        : "1.4.0",
