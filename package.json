@@ -1,0 +1,14 @@
+{
+  "name": "YOM-AngularJS-Testing-Article",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matsko/YOM-AngularJS-Testing-Article"
+  },
+  "dependencies" : {
+    "testacular"  : "0.4.0",
+    "chai"        : "1.4.0",
+    "grunt"       : "0.3.17",
+    "yeoman"      : "0.9.6"
+  }
+}

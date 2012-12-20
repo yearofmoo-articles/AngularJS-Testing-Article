@@ -1,0 +1,1 @@
+var konsole = window.console;
