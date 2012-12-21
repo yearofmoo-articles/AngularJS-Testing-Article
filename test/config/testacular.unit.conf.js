@@ -24,7 +24,7 @@ files = [
   './test/lib/angular/angular-mocks.js',
 
   //Test-Specs
-  './test/unit/**/*.js'
+  './test/spec/unit/**/*.js'
 ];
 
 port = 9201;

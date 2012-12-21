@@ -15,7 +15,7 @@ files = [
   './test/lib/chai-expect.js',
 
   //Test-Specs
-  './test/3rd_party/**/*.js'
+  './test/spec/3rd_party/**/*.js'
 ];
 
 reporters = ['progress'];

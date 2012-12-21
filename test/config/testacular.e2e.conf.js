@@ -13,7 +13,7 @@ files = [
   './test/lib/angular/angular-mocks.js',
 
   //Test-Specs
-  './test/e2e/**/*.js'
+  './test/spec/e2e/**/*.js'
 ];
 
 autoWatch = true;

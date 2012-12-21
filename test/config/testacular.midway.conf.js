@@ -25,7 +25,7 @@ files = [
   './test/lib/integration-wrapper.js',
 
   //Test-Specs
-  './test/midway/**/*.js'
+  './test/spec/midway/**/*.js'
 ];
 
 port = 9202;
