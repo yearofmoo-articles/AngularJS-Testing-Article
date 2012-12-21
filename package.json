@@ -8,8 +8,6 @@
   "homepage": "http://www.yearofmoo.com",
   "dependencies" : {
     "testacular"  : "0.4.0",
-    "chai"        : "1.4.0",
-    "grunt"       : "0.3.17",
-    "yeoman"      : "0.9.6"
+    "chai"        : "1.4.0"
   }
 }
