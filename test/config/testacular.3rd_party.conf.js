@@ -1,19 +1,21 @@
 // base path, that will be used to resolve files and exclude
-basePath = '../';
+basePath = '../../';
 
 files = [
   MOCHA,
   MOCHA_ADAPTER,
-  './application/lib/angular.min.js',
-  './test/lib/angular/angular-mocks.js',
-  './application/application.js',
-  './application/controllers/*.js',
-  './application/routes.js',
-  './test/lib/console.js',
-  './test/lib/chai.js',
+
+  //3rd Party Code
+  './app/lib/angular.min.js',
+  './app/lib/*.js',
+
+  //Test-Specific Code
+  './node_modules/chai/chai.js',
   './test/lib/chai-should.js',
   './test/lib/chai-expect.js',
-  './test/spec/**/*.js'
+
+  //Test-Specs
+  './test/3rd_party/**/*.js'
 ];
 
 reporters = ['progress'];
