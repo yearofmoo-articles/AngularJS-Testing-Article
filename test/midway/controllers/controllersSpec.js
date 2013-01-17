@@ -1,7 +1,7 @@
 //
 // test/midway/controllers/controllersSpec.js
 //
-describe("Testing AngularJS Controllers", function() {
+describe("Midway: Testing Controllers", function() {
 
   var test, onChange;
 

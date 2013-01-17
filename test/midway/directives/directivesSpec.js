@@ -1,7 +1,7 @@
 //
-// test/midway/directivesSpec.js
+// test/midway/directives/directivesSpec.js
 //
-describe("Testing Directives", function() {
+describe("Midway: Testing Directives", function() {
 
   var test, $injector;
 

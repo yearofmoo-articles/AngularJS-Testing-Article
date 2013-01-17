@@ -1,19 +1,19 @@
 //
 // test/e2e/controllers/controllersSpec.js
 //
-describe("Testing Requests", function() {
+describe("E2E: Testing Controllers", function() {
 
   beforeEach(function() {
     browser().navigateTo('../../app/index.html');
   });
 
-  it('the videos page url should work', function() {
+  it('should have a working videos page controller that applies the videos to the scope', function() {
     browser().navigateTo('#!/');
     expect(browser().location().path()).toBe("/videos");
     expect(element('#ng-view').html()).toContain('data-app-youtube-listings');
   });
 
-  it('should request /other and it should work fine', function() {
+  it('should have a working video page controller that applies the video to the scope', function() {
     browser().navigateTo('#!/videos/WuiHuZq_cg4');
     expect(browser().location().path()).toBe("/videos/WuiHuZq_cg4");
     expect(element('#ng-view').html()).toContain('app-youtube-embed');

@@ -1,7 +1,7 @@
 //
 // test/unit/directivesSpec.js
 //
-describe("Testing Directives", function() {
+describe("Unit: Testing Directives", function() {
 
   var $compile, $rootScope;
 

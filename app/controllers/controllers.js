@@ -46,8 +46,16 @@ angular.module('App.Controllers', [])
     $scope.onReady();
   }])
 
-  .controller('VideosCtrl', ['$appYoutubeSearcher', '$scope', '$routeParams', function($youtube, $scope, $params) {
-    $scope.q = $params.q || 'latest';
+  .controller('VideosCtrl', ['$appYoutubeSearcher', '$location', '$appStorage', '$scope', '$routeParams', function($youtube, $location, $storage, $scope, $params) {
+    $scope.current_path = '#' + $location.url();
+    if($params.q) {
+      $scope.q = $params.q;
+      $scope.search = true;
+    }
+    else {
+      $scope.search = false;
+      $scope.q = 'angularjs';
+    }
     $youtube.query($scope.q, true, function(q, videos) {
       $scope.videos = videos;
       $scope.onReady();
@@ -71,7 +79,7 @@ angular.module('App.Controllers', [])
     $youtube.findVideo(id, true, function(id, video) {
       $scope.video_id = id;
       $scope.video = video;
-      $scope.stars = 5;
+      $scope.stars = video.rating;
 
       $youtube.addToWatchedVideos(video);
       $scope.onReady();

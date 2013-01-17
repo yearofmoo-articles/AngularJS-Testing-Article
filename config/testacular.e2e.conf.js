@@ -6,18 +6,17 @@ files = [
   './test/e2e/**/*.js'
 ];
 
-singleRun = false;
-autoWatch = true;
-
 port = 9203;
 runnerPort = 9303;
-colors = true;
 captureTimeout = 5000;
-growl = true;
 
-browsers = ['Chrome'];
-reporters = ['progress'];
-
+shared = require(__dirname + "/testacular.shared.conf.js").shared
+growl     = shared.colors;
+colors    = shared.colors;
+singleRun = shared.singleRun;
+autoWatch = shared.autoWatch;
+browsers  = shared.defaultBrowsers;
+reporters = shared.defaultReporters;
 proxies = {
   '/': 'http://localhost:8100/'
 };

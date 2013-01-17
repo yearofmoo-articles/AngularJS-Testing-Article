@@ -1,3 +1,16 @@
+<ul class="breadcrumb">
+  <li>
+    <span class="divider">/</span>
+    <a data-ng-href="{{ r('videos_path') }}">Videos</a>
+  </li>
+  <li>
+    <span class="divider">/</span>
+    <a data-ng-href="{{ r('watched_videos_path') }">Watched Videos</a>
+  </li>
+  <li style="float:right" id="app-welcome-text">
+    <div data-app-welcome>User</div>
+  </li>
+</ul>
 <div data-app-youtube-listings>
   <div data-ng-include="'templates/partials/youtube_listing_tpl.html'" data-ng-repeat="video in videos"></div>
 </div>

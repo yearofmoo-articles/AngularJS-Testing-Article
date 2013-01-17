@@ -13,6 +13,7 @@ h2 {
 
 .app-youtube-listing {
   padding:25px;
+  position:relative;
   border-bottom:1px solid #ddd;
   background:#eee;
   overflow:auto;
@@ -77,4 +78,33 @@ h2 {
 .app-youtube-listing-imagery {
   overflow:auto;
   margin-bottom:20px;
+}
+
+.app-youtube-star .icon-star {
+  font-size:50px;
+  color:gold;
+  text-shadow: 0 0 30px white;
+}
+
+.app-youtube-profile-header {
+  text-align:left;
+  position:relative;
+  margin-bottom:30px;
+}
+
+.app-youtube-profile-header .app-youtube-stars {
+  float:right;
+  margin-left:20px;
+  margin-bottom:20px;
+}
+
+.app-youtube-related {
+  margin-top:40px;
+  text-align:left;
+}
+
+.app-youtube-listing .app-youtube-stars {
+  position:absolute;
+  right:20px;
+  bottom:20px;
 }

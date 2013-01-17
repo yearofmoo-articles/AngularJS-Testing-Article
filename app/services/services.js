@@ -224,6 +224,10 @@ angular.module('App.Services', [])
         var id          = $media.yt$videoid.$t;
         var keywords    = $media.media$keywords || '';
         var description = $media.media$description.$t;
+        var rating      = 0;
+        if(entry.gd$rating) {
+          rating = parseInt(entry.gd$rating.average);
+        }
 
         var width       = 560
         var height      = 315
@@ -247,6 +251,7 @@ angular.module('App.Services', [])
           description : description,
           image : image,
           thumbnails : thumbnails,
+          rating : rating,
           keywords : keywords,
           embedUrl : embedUrl
         };

@@ -1,23 +1,23 @@
 //
 // test/e2e/templates/templatesSpec.js
 //
-describe("Testing Templates", function() {
+describe("E2E: Testing Templates", function() {
 
   beforeEach(function() {
     browser().navigateTo('../../app/index.html');
   });
 
-  it('should load the template fine inside the videos page', function() {
+  it('should redirect and setup the videos page template on root', function() {
     browser().navigateTo('#!/');
     expect(element('#ng-view').html()).toContain('youtube_listing');
   });
 
-  it('should load the template fine inside the watched videos page', function() {
+  it('should load the watched videos template into view', function() {
     browser().navigateTo('#!/watched-videos');
     expect(element('#ng-view').html()).toContain('youtube_listing');
   });
 
-  it('should load the template fine inside the video profile page', function() {
+  it('should load the watched video template into view', function() {
     browser().navigateTo('#!/videos/123');
     expect(element('#ng-view').html()).toContain('profile');
   });

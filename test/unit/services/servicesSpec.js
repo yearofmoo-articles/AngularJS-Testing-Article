@@ -1,7 +1,7 @@
 //
 // test/unit/services/servicesSpec.js
 //
-describe("Testing AngularJS Controllers", function() {
+describe("Unit: Testing Controllers", function() {
 
   beforeEach(angular.mock.module('App'));
 
@@ -9,11 +9,11 @@ describe("Testing AngularJS Controllers", function() {
     expect($appStorage).not.to.equal(null);
   }));
 
-  it('should contain an $appStorage service', inject(function($appYoutubeSearcher) {
+  it('should contain an $appYoutubeSearcher service', inject(function($appYoutubeSearcher) {
     expect($appYoutubeSearcher).not.to.equal(null);
   }));
 
-  it('should have a owrking $appStorage service', inject(['$appYoutubeSearcher',function($yt) {
+  it('should have a owrking $appYoutubeSearcher service', inject(['$appYoutubeSearcher',function($yt) {
     expect($yt.prefixKey).not.to.equal(null);
     expect($yt.resize).not.to.equal(null);
     expect($yt.prepareImage).not.to.equal(null);

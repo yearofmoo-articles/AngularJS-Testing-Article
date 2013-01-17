@@ -1,7 +1,7 @@
 //
 // test/e2e/filters/filtersSpec.js
 //
-describe("Testing Filters", function() {
+describe("E2E: Testing Filters", function() {
 
   beforeEach(function() {
     browser().navigateTo('../../app/index.html');

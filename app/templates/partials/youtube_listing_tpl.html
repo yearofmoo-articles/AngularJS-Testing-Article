@@ -15,6 +15,11 @@
         data-ng-repeat="thumb in video.thumbnails" />
     </div>
   </div>
+  <div class="app-youtube-stars">
+    <span class="app-youtube-star" data-ng-repeat="n in [] | range:video.rating">
+      <span class="icon-star"></span>
+    </span>
+  </div>
   <p>
     {{ video.description }}
   </p>

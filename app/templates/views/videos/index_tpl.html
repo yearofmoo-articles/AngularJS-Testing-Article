@@ -3,10 +3,14 @@
     <span class="divider">/</span>
     <a data-ng-href="{{ r('videos_path') }}">Videos</a>
   </li>
+  <li data-ng-show="search">
+    <span class="divider">/</span>
+    <a data-ng-href="{{ current_path }}">Search <strong>"{{ q }}"</strong></a>
+  </li>
   <li style="float:right" id="app-welcome-text">
     <div data-app-welcome>User</div>
   </li>
 </ul>
 <div data-app-youtube-listings id="app-youtube-listings">
-  <div data-ng-include="'templates/partials/youtube_listing_tpl.html'" data-ng-repeat="video in videos"></div>
+  <div data-ng-include="'templates/partials/youtube_listing_tpl.html?a'" data-ng-repeat="video in videos"></div>
 </div>

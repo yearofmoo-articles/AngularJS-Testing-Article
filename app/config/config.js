@@ -4,11 +4,15 @@ var CONFIG;
 
 var appPrefix = 'app/';
 var templateUrlPrefix = 'templates/';
+var appVersion = 8;
 
 CONFIG = {
 
+  version : appVersion,
+
   baseDirectory : appPrefix,
   templateDirectory : templateUrlPrefix,
+  templateFileQuerystring : "?v=" + appVersion,
 
   routing : {
 
@@ -23,7 +27,7 @@ CONFIG = {
   templateFileSuffix : '_tpl.html',
 
   prepareViewTemplateUrl : function(url) {
-    return this.viewUrlPrefix + url + this.templateFileSuffix;
+    return this.viewUrlPrefix + url + this.templateFileSuffix + this.templateFileQuerystring;
   }
 
 };

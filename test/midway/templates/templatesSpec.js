@@ -1,7 +1,7 @@
 //
 // test/midway/templates/templatesSpec.js
 //
-describe("Testing Requests", function() {
+describe("Midway: Testing Requests", function() {
 
   var test, onChange;
   var $location, $injector, $params;

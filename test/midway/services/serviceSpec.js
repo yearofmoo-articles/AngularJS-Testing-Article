@@ -1,7 +1,7 @@
 //
 // test/midway/services/servicesSpec.js
 //
-describe("Testing AngularJS Services", function() {
+describe("Midway: Testing Services", function() {
 
   var test, onChange, $injector;
 

@@ -1,7 +1,7 @@
 //
 // test/midway/filters/filtersSpec.js
 //
-describe("Testing AngularJS Filters", function() {
+describe("Midway: Testing Filters", function() {
 
   var test, onChange, $filter;
 

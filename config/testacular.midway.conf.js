@@ -27,18 +27,17 @@ files = [
   './test/midway/**/*.js'
 ];
 
-singleRun = false;
-autoWatch = true;
 
 port = 9202;
 runnerPort = 9302;
-colors = true;
 captureTimeout = 5000;
-growl = true;
 
-browsers = ['Chrome'];
-reporters = ['progress'];
 
-proxies = {
-  '/': 'http://localhost:8000'
-};
+shared = require(__dirname + "/testacular.shared.conf.js").shared
+growl     = shared.colors;
+colors    = shared.colors;
+singleRun = shared.singleRun;
+autoWatch = shared.autoWatch;
+browsers  = shared.defaultBrowsers;
+reporters = shared.defaultReporters;
+proxies   = shared.defaultProxies;

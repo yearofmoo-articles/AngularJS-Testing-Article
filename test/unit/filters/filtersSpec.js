@@ -1,7 +1,7 @@
 //
 // test/unit/filters/filtersSpec.js
 //
-describe("Testing AngularJS Filters", function() {
+describe("Unit: Testing Filters", function() {
 
   beforeEach(angular.mock.module('App'));
 

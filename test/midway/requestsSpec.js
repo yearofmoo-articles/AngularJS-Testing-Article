@@ -1,7 +1,7 @@
 //
 // test/midway/requestsSpec.js
 //
-describe("Testing Requests", function() {
+describe("Midway: Testing Requests", function() {
 
   var test, onChange;
 
