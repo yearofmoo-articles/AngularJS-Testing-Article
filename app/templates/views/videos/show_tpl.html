@@ -1,0 +1,30 @@
+<ul class="breadcrumb">
+  <li>
+    <span class="divider">/</span>
+    <a data-ng-href="{{ r('videos_path') }}">Videos</a>
+  </li>
+  <li>
+    <span class="divider">/</span>
+    <a data-ng-href="{{ r('video_path', { id : video.id }) }}">{{ video.title }}</a>
+  </li>
+</ul>
+<div class="app-youtube-profile">
+  <div class="app-youtube-stars">
+    <span class="app-youtube-star" data-ng-repeat="n in [] | range:stars">
+      Star
+    </span>
+  </div>
+  <div class="app-youtube-embed">
+    <iframe width="{{ video.width }}" height="{{ video.height }}" src="{{ video.embedUrl }}" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="app-youtube-related">
+    <a href="#" data-ng-repeat="related in rel">
+      <img src="{{ rel.image.url }}" />
+    </a>
+  </div>
+  <div class="app-youtube-thumbnails">
+    <a href="#" data-ng-repeat="video.thumbnails in thumb">
+      <img data-ng-src="{{ thumb.url }}" />
+    </a>
+  </div>
+</div>

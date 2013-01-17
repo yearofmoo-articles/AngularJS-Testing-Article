@@ -4,7 +4,6 @@ var App = window.App = angular.module('App',
     'App.Filters',
     'App.Services',
     'App.Directives',
-    'App.Resources',
-    'App.Config'
+    'App.Routes'
   ]
 );

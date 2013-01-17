@@ -1,0 +1,80 @@
+h1 {
+  font-size:40px;
+}
+
+h2 {
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+#wrapper {
+  padding-top:60px;
+}
+
+.app-youtube-listing {
+  padding:25px;
+  border-bottom:1px solid #ddd;
+  background:#eee;
+  overflow:auto;
+}
+
+.app-youtube-listing + .app-youtube-listing {
+  margin-top:20px;
+}
+
+.app-youtube-listing:hover {
+  background:white;
+  cursor:pointer;
+  box-shadow:0 0 10px silver;
+}
+
+.app-youtube-listing-image {
+  float:left;
+  margin-right:20px;
+}
+
+.app-youtube-listing-thumbnails > .app-youtube-listing-thumbnail {
+  margin:5px;
+}
+
+.app-youtube-listing-thumbnail {
+  border:2px solid #aaa;
+}
+
+.app-youtube-searcher {
+  float:right;
+}
+
+.app-loading-container {
+  float:left;
+  margin-right:20px;
+  width:25px;
+  height:25px;
+}
+
+.app-loading-animation {
+  -webkit-transition:all 0.25s linear;
+  background:url(./lib/spinner.gif) center center no-repeat;
+  width:25px;
+  height:25px;
+  display:block;
+}
+
+.app-loading-animation.ready {
+  opacity:0;
+}
+
+.app-loading-animation,
+.app-loading-animation.loading {
+  opacity:1;
+}
+
+.app-youtube-profile {
+  text-align:center;
+  padding:20px;
+}
+
+.app-youtube-listing-imagery {
+  overflow:auto;
+  margin-bottom:20px;
+}

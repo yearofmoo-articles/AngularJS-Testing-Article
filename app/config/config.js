@@ -1,13 +1,31 @@
-angular.module('App.Config', [])
+var CONFIG;
 
-  .config(['$routeProvider', function($routes) {
-    $routes.when('/home', {
-      redirectTo : '/'
-    });
+(function() {
 
-    $routes.when('/', {
-      controller : 'HomeCtrl',
-      templateUrl : 'application/templates/home.html'
-    });
+var appPrefix = 'app/';
+var templateUrlPrefix = 'templates/';
 
-  }]);
+CONFIG = {
+
+  baseDirectory : appPrefix,
+  templateDirectory : templateUrlPrefix,
+
+  routing : {
+
+    prefix : '!',
+    html5Mode : false
+
+  },
+
+  viewUrlPrefix : templateUrlPrefix + 'views/',
+  partialUrlPrefix : templateUrlPrefix + 'partials/',
+
+  templateFileSuffix : '_tpl.html',
+
+  prepareViewTemplateUrl : function(url) {
+    return this.viewUrlPrefix + url + this.templateFileSuffix;
+  }
+
+};
+
+})();

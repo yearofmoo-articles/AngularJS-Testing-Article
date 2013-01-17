@@ -1,0 +1,21 @@
+<div data-app-youtube-listing data-app-youtube-listing-id="{{ video.id }}" class="app-youtube-listing" data-app-video>
+  <header class="app-youtube-listing-header">
+    <h2>{{ video.title }}</h2>
+  </header>
+  <div class="app-youtube-listing-imagery">
+    <div class="app-youtube-listing-image">
+      <img data-ng-src="{{ video.image.url }}" height="{{ video.image.height }}" width="{{ video.image.width }}" />
+    </div>
+    <div class="app-youtube-listing-thumbnails">
+      <img
+        class="app-youtube-listing-thumbnail"
+        data-ng-src="{{ thumb.url }}"
+        height="{{ thumb.height }}"
+        width="{{ thumb.width }}"
+        data-ng-repeat="thumb in video.thumbnails" />
+    </div>
+  </div>
+  <p>
+    {{ video.description }}
+  </p>
+</div>

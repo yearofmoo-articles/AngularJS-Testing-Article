@@ -1,0 +1,3 @@
+unit:   ./node_modules/testacular/bin/testacular start ./config/testacular.unit.conf.js
+midway: ./node_modules/testacular/bin/testacular start ./config/testacular.midway.conf.js
+e2e:    ./node_modules/testacular/bin/testacular start ./config/testacular.e2e.conf.js
