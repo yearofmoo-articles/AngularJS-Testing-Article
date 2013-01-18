@@ -4,7 +4,7 @@ This is a helper repository which is designed to be used alongside the blog arti
 
 ## Blog Article
 Click the link below to view the blog article
-http://www.yearofmoo.com/12/2012/full-spectrum-testing-angularjs-and-testacular
+http://www.yearofmoo.com/1/2013/full-spectrum-testing-angularjs-and-testacular
 
 ## Demo
 The Application can be demoed via

@@ -1,5 +1,5 @@
 //
-// test/unit/directivesSpec.js
+// test/unit/directives/directivesSpec.js
 //
 describe("Unit: Testing Directives", function() {
 

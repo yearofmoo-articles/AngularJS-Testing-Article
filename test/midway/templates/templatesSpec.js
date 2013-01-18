@@ -32,7 +32,7 @@ describe("Midway: Testing Requests", function() {
         var current = test.route().current;
         var controller = current.controller;
         var template = current.templateUrl;
-        expect(template).to.equal('templates/views/videos/index_tpl.html');
+        expect(template).to.match(/templates\/views\/videos\/index_tpl\.html/);
         onChange = null
         done();
       },1000);
