@@ -13,10 +13,29 @@ h2 {
 
 .app-youtube-listing {
   padding:25px;
+  box-shadow:0 0 5px #aaa;
   position:relative;
+  margin-top:0;
+  margin-bottom:0px;
   border-bottom:1px solid #ddd;
   background:#eee;
   overflow:auto;
+  -webkit-transition:all 0.25s ease-out;
+  -moz-transition:all 0.25s ease-out;
+  -ms-transition:all 0.25s ease-out;
+  -o-transition:all 0.25s ease-out;
+  transition:all 0.25s ease-out;
+}
+
+.app-youtube-listing:hover {
+  margin-top:20px;
+  margin-bottom:20px;
+  box-shadow:0 0 10px #555;
+  -webkit-transform:scale(1.01);
+  -moz-transform:scale(1.01);
+  -ms-transform:scale(1.01);
+  -o-transform:scale(1.01);
+  transform:scale(1.01);
 }
 
 .app-youtube-listing + .app-youtube-listing {
