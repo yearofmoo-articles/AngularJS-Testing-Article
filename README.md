@@ -10,4 +10,4 @@ http://www.yearofmoo.com/1/2013/full-spectrum-testing-angularjs-and-testacular
 ## Demo
 The Application can be demoed via
 
-http://yearofmoo.github.com/articles/YOM-AngularJS-Testing-Article/app/
+http://yearofmoo-articles.github.com/angularjs-testing-article/app/
