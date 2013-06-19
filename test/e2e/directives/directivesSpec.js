@@ -4,7 +4,7 @@
 describe("E2E: Testing Directives", function() {
 
   beforeEach(function() {
-    browser().navigateTo('../../app/index.html');
+    browser().navigateTo('/');
   });
 
   it('should have a working welcome directive apply it\'s logic to the page', function() {

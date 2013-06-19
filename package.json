@@ -6,9 +6,21 @@
     "url": "https://github.com/matsko/YOM-AngularJS-Testing-Article"
   },
   "homepage": "https://github.com/yearofmoo/YOM-AngularJS-Testing-Article",
-  "dependencies" : {
-    "testacular"  : "canary",
-    "http-server" : "0.5.3",
-    "chai"        : "1.4.0"
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-css": "~0.5.4",
+    "grunt-contrib-connect": "~0.1.2",
+    "grunt-contrib-uglify": "~0.2.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-shell": "~0.2.2",
+    "grunt-contrib-copy": "~0.4.1",
+    "karma": "0.9.3",
+    "karma-mocha": "latest",
+    "karma-chrome-launcher": "latest",
+    "karma-safari-launcher": "latest",
+    "karma-firefox-launcher": "latest",
+    "karma-ng-scenario": "latest",
+    "chai": "1.4.0"
   }
 }

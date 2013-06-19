@@ -1,2 +1,0 @@
-web_server: ./node_modules/http-server/bin/http-server -p 8000 app
-e2e_server: ./scripts/lib/e2e_server.js 8100

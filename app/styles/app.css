@@ -1,0 +1,147 @@
+h1 {
+  font-size:40px;
+}
+
+h2 {
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+#wrapper {
+  padding-top:60px;
+}
+
+.app-youtube-listing {
+  padding:25px;
+  box-shadow:0 0 5px #aaa;
+  position:relative;
+  margin-top:0;
+  margin-bottom:0px;
+  border-bottom:1px solid #ddd;
+  background:#eee;
+  overflow:auto;
+  -webkit-transition:all 0.25s ease-out;
+  -moz-transition:all 0.25s ease-out;
+  -ms-transition:all 0.25s ease-out;
+  -o-transition:all 0.25s ease-out;
+  transition:all 0.25s ease-out;
+}
+
+.app-youtube-listing:hover {
+  margin-top:20px;
+  margin-bottom:20px;
+  box-shadow:0 0 10px #555;
+  -webkit-transform:scale(1.01);
+  -moz-transform:scale(1.01);
+  -ms-transform:scale(1.01);
+  -o-transform:scale(1.01);
+  transform:scale(1.01);
+}
+
+.app-youtube-listing + .app-youtube-listing {
+  margin-top:20px;
+}
+
+.app-youtube-listing:hover {
+  background:white;
+  cursor:pointer;
+  box-shadow:0 0 10px silver;
+}
+
+.app-youtube-listing-image {
+  float:left;
+  margin-right:20px;
+}
+
+.app-youtube-listing-thumbnails > .app-youtube-listing-thumbnail {
+  margin:5px;
+}
+
+.app-youtube-listing-thumbnail {
+  border:2px solid #aaa;
+}
+
+.app-youtube-searcher {
+  float:right;
+}
+
+.app-loading-container {
+  float:left;
+  margin-right:20px;
+  width:25px;
+  height:25px;
+}
+
+.app-loading-animation {
+  -webkit-transition:all 0.25s linear;
+  background:url(../images/spinner.gif) center center no-repeat;
+  width:25px;
+  height:25px;
+  display:block;
+}
+
+.app-loading-animation.ready {
+  opacity:0;
+}
+
+.app-loading-animation,
+.app-loading-animation.loading {
+  opacity:1;
+}
+
+.app-youtube-profile {
+  text-align:center;
+  padding:20px;
+}
+
+.app-youtube-listing-imagery {
+  overflow:auto;
+  margin-bottom:20px;
+}
+
+.app-youtube-star .icon-star {
+  font-size:50px;
+  color:gold;
+  text-shadow: 0 0 30px white;
+  width:45px;
+}
+
+.app-youtube-profile-header {
+  text-align:left;
+  position:relative;
+  margin-bottom:30px;
+}
+
+.app-youtube-profile-header .app-youtube-stars {
+  float:right;
+  margin-left:20px;
+  margin-bottom:20px;
+}
+
+.app-youtube-related {
+  margin-top:40px;
+  text-align:left;
+}
+
+.app-youtube-listing .app-youtube-stars {
+  position:absolute;
+  right:30px;
+  bottom:30px;
+}
+
+#footer {
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:black;
+  padding:1em;
+  box-shadow:0 -5px 20px #555;
+}
+#footer a {
+  color:silver;
+  text-decoration:none;
+}
+#footer .cloud-link {
+  float:right;
+}
