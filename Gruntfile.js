@@ -32,6 +32,11 @@ module.exports = function(grunt) {
       midway: './test/karma-midway.conf.js',
       e2e: './test/karma-e2e.conf.js'
     },
+    autotest: {
+      unit: './test/karma-unit.conf.js',
+      midway: './test/karma-midway.conf.js',
+      e2e: './test/karma-e2e.conf.js'
+    },
     watch: {
       scripts: {
       files: ['app/scripts/**/*.js','app/styles/**/*.css'],
@@ -71,11 +76,11 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerMultiTask('test', 'Log stuff.', function() {
-    util.startKarma.call(util, this.data, false, this.async());
+  grunt.registerMultiTask('test', 'Run and watch the unit tests with Karma', function() {
+    util.startKarma.call(util, this.data, true, this.async());
   });
 
-  grunt.registerTask('autotest', 'Run and watch the unit tests with Karma', function(){
+  grunt.registerMultiTask('autotest', 'Run and watch the unit tests with Karma', function(){
     util.startKarma.call(util, this.data, false, this.async());
   });
 

@@ -28,6 +28,8 @@ describe("Midway: Testing Requests", function() {
 
   it("should load the template for the videos page properly", function(done) {
     onChange = function() {
+      onChange = function() {};
+
       setTimeout(function() {
         var current = test.route().current;
         var controller = current.controller;

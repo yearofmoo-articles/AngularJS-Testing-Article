@@ -25,6 +25,8 @@ describe("Midway: Testing Requests", function() {
 
   it("should have a working video_path request", function(done) {
     onChange = function() {
+      onChange = function(){};
+
       var $params = test.$params;
       expect(parseInt($params.id)).to.equal(10);
 
@@ -39,6 +41,8 @@ describe("Midway: Testing Requests", function() {
 
   it("should have a working other_path request", function(done) {
     onChange = function() {
+      onChange = function(){};
+
       var view = test.view();
       expect(view.innerHTML).to.contain('other page');
       done();

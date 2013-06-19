@@ -10,8 +10,8 @@ shared.plugins = [
 
 shared.frameworks = ['mocha'];
 shared.basePath  = '../';
-shared.singleRun = true
-shared.autoWatch = false
+shared.singleRun = false
+shared.autoWatch = true
 shared.colors    = true
 
 shared.reporters = ['progress'];

@@ -2,7 +2,6 @@ var grunt = require('grunt');
 var spawn = require('child_process').spawn;
 module.exports = {
   startKarma: function(config, singleRun, done){
-    console.log(config);
     var browsers = grunt.option('browsers');
     var reporters = grunt.option('reporters');
     var noColor = grunt.option('no-colors');
