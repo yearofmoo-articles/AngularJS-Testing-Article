@@ -13,10 +13,11 @@ http://yearofmoo-articles.github.com/angularjs-testing-article/app/
 
 ## Using the application
 
-Be sure to install everything first by doing:
-`npm install`
+Install grunt
+`npm install -g grunt-cli`
 
-Followed by:
+And then be sure to install everything that the repo requires:
+`npm install`
 `bower install`
 
 ### Development Mode
