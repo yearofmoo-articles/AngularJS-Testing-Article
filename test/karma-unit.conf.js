@@ -1,11 +1,13 @@
-module.exports = function(karma) {
-  config = require(__dirname + "/karma-shared.conf.js").shared;
-  config.files = config.files.concat([
+var shared = require('./karma-shared.conf');
+
+module.exports = function(config) {
+  shared(config);
+
+  config.files = shared.files.concat([
     //extra testing code
     'components/angular-mocks/index.js',
 
     //test files
     './test/unit/**/*.js'
   ]);
-  karma.configure(config);
 };

@@ -1,4 +1,3 @@
-var util = require('./test/lib/karma-util.js');
 module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-shell');
@@ -7,6 +6,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-karma');
 
   grunt.initConfig({
     shell: {
@@ -17,26 +17,44 @@ module.exports = function(grunt) {
         command: 'cp -R components/components-font-awesome/font app/font'
       }
     },
+
     connect: {
+      options: {
+        port: 8000,
+        base: './app'
+      },
       server: {
         options: {
-          port: 8000,
-          hostname: '0.0.0.0',
-          base: './app',
           keepalive: true
         }
+      },
+      testserver: {}
+    },
+
+    karma: {
+      unit: {
+        configFile: './test/karma-unit.conf.js',
+        autoWatch: false,
+        singleRun: true
+      },
+      unit_auto: {
+        configFile: './test/karma-unit.conf.js'
+      },
+      midway: {
+        configFile: './test/karma-midway.conf.js',
+        autoWatch: false,
+        singleRun: true
+      },
+      midway_auto: {
+        configFile: './test/karma-midway.conf.js'
+      },
+      e2e: {
+        configFile: './test/karma-e2e.conf.js',
+        autoWatch: false,
+        singleRun: true
       }
     },
-    test: {
-      unit: './test/karma-unit.conf.js',
-      midway: './test/karma-midway.conf.js',
-      e2e: './test/karma-e2e.conf.js'
-    },
-    autotest: {
-      unit: './test/karma-unit.conf.js',
-      midway: './test/karma-midway.conf.js',
-      e2e: './test/karma-e2e.conf.js'
-    },
+
     watch: {
       scripts: {
       files: ['app/scripts/**/*.js','app/styles/**/*.css'],
@@ -46,6 +64,7 @@ module.exports = function(grunt) {
         },
       },
     },
+
     concat: {
       styles: {
         dest: './app/assets/app.css',
@@ -54,7 +73,7 @@ module.exports = function(grunt) {
           'components/components-font-awesome/css/font-awesome.css',
           'components/bootstrap.css/css/bootstrap.css',
           'app/styles/app.css'
-        ] 
+        ]
       },
       scripts: {
         options: {
@@ -76,13 +95,8 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerMultiTask('test', 'Run and watch the unit tests with Karma', function() {
-    util.startKarma.call(util, this.data, true, this.async());
-  });
-
-  grunt.registerMultiTask('autotest', 'Run and watch the unit tests with Karma', function(){
-    util.startKarma.call(util, this.data, false, this.async());
-  });
+  grunt.registerTask('test:e2e', ['connect:testserver', 'karma:e2e']);
+  grunt.registerTask('test', ['karma:unit', 'karma:midway', 'test:e2e']);
 
   //installation-related
   grunt.registerTask('install', ['shell:install','shell:font_awesome_fonts']);

@@ -1,27 +1,19 @@
-var shared = {};
-shared.plugins = [
-  'karma-mocha',
-  'karma-ng-scenario',
-  'karma-chrome-launcher',
-  'karma-firefox-launcher',
-  'karma-safari-launcher',
-  'karma-ng-scenario'
-];
+var shared = function(config) {
+  config.set({
+    basePath: '../',
+    frameworks: ['mocha'],
+    reporters: ['progress'],
+    browsers: ['Chrome'],
+    autoWatch: true,
 
-shared.frameworks = ['mocha'];
-shared.basePath  = '../';
-shared.singleRun = false
-shared.autoWatch = true
-shared.colors    = true
-
-shared.reporters = ['progress'];
-shared.browsers = ['Chrome'];
-shared.proxies = {
-  '/': 'http://localhost:8000/'
+    // these are default values anyway
+    singleRun: false,
+    colors: true,
+  });
 };
 
 shared.files = [
-  './test/mocha.conf.js',
+  'test/mocha.conf.js',
 
   //3rd Party Code
   'components/angularjs/index.js',
@@ -37,9 +29,9 @@ shared.files = [
   'app/scripts/app.js',
 
   //Test-Specific Code
-  './node_modules/chai/chai.js',
-  './test/lib/chai-should.js',
-  './test/lib/chai-expect.js'
+  'node_modules/chai/chai.js',
+  'test/lib/chai-should.js',
+  'test/lib/chai-expect.js'
 ];
 
-exports.shared = shared;
+module.exports = shared;

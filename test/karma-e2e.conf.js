@@ -1,18 +1,14 @@
-module.exports = function(karma) {
-  shared = require(__dirname + "/karma-shared.conf.js").shared;
-  karma.configure({
-    urlRoot: '/_karma_/',
-    plugins: shared.plugins,
+var shared = require('./karma-shared.conf');
+
+module.exports = function(config) {
+  shared(config);
+
+  config.set({
     frameworks: ['ng-scenario'],
-    basePath: shared.basePath,
-    browsers: shared.browsers,
-    autoWatch: shared.autoWatch,
-    reporters: shared.reporters,
-    singleRun: shared.singleRun,
-    colors: shared.colors,
-    proxies: shared.proxies,
-    files: [
-      './test/e2e/**/*.js'
-    ]
+    files: ['test/e2e/**/*.js'],
+    urlRoot: '/_karma_/',
+    proxies: {
+      '/': 'http://localhost:8000/'
+    }
   });
 };
