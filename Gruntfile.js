@@ -52,6 +52,9 @@ module.exports = function(grunt) {
         configFile: './test/karma-e2e.conf.js',
         autoWatch: false,
         singleRun: true
+      },
+      e2e_auto: {
+        configFile: './test/karma-e2e.conf.js'
       }
     },
 
@@ -97,6 +100,12 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test:e2e', ['connect:testserver', 'karma:e2e']);
   grunt.registerTask('test', ['karma:unit', 'karma:midway', 'test:e2e']);
+
+  //keeping these around for legacy use
+  grunt.registerTask('autotest:unit', ['karma:unit_auto']);
+  grunt.registerTask('autotest:midway', ['karma:midway_auto']);
+  grunt.registerTask('autotest:e2e', ['karma:e2e_auto']);
+  grunt.registerTask('autotest', ['karma:unit_auto']);
 
   //installation-related
   grunt.registerTask('install', ['shell:install','shell:font_awesome_fonts']);
