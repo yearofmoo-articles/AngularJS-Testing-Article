@@ -1,34 +1,64 @@
 module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-shell');
-  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-karma');
 
   grunt.initConfig({
     shell: {
-      install: {
+      options : {
+        stdout: true
+      },
+      npm_install: {
         command: 'node ./node_modules/bower/bin/bower install'
       },
+      bower_install: {
+        command: './node_modules/.bin/bower update'
+      },
       font_awesome_fonts: {
-        command: 'cp -R components/components-font-awesome/font app/font'
+        command: 'cp -R bower_components/components-font-awesome/font app/font'
       }
     },
 
     connect: {
       options: {
-        port: 8000,
-        base: './app'
+        base: 'app/'
       },
-      server: {
+      webserver: {
         options: {
+          port: 8888,
           keepalive: true
         }
       },
-      testserver: {}
+      devserver: {
+        options: {
+          port: 8888
+        }
+      },
+      testserver: {
+        options: {
+          port: 9999
+        }
+      },
+      coverage: {
+        options: {
+          base: 'coverage/',
+          port: 5555,
+          keepalive: true
+        }
+      }
+    },
+
+    open: {
+      devserver: {
+        path: 'http://localhost:8888'
+      },
+      coverage: {
+        path: 'http://localhost:5555'
+      }
     },
 
     karma: {
@@ -59,13 +89,10 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      scripts: {
-      files: ['app/scripts/**/*.js','app/styles/**/*.css'],
-        tasks: ['concat'],
-        options: {
-          nospawn: true
-        },
-      },
+      assets: {
+        files: ['app/styles/**/*.css','app/scripts/**/*.js'],
+        tasks: ['concat']
+      }
     },
 
     concat: {
@@ -73,8 +100,8 @@ module.exports = function(grunt) {
         dest: './app/assets/app.css',
         src: [
           'app/styles/reset.css',
-          'components/components-font-awesome/css/font-awesome.css',
-          'components/bootstrap.css/css/bootstrap.css',
+          'bower_components/components-font-awesome/css/font-awesome.css',
+          'bower_components/bootstrap.css/css/bootstrap.css',
           'app/styles/app.css'
         ]
       },
@@ -84,7 +111,7 @@ module.exports = function(grunt) {
         },
         dest: './app/assets/app.js',
         src: [
-          'components/angularjs/index.js',
+          'bower_components/angularjs/index.js',
           'app/scripts/lib/router.js',
           'app/scripts/config/config.js',
           'app/scripts/services/**/*.js',
@@ -94,26 +121,30 @@ module.exports = function(grunt) {
           'app/scripts/config/routes.js',
           'app/scripts/app.js',
         ]
-      },
+      }
     }
   });
 
-  grunt.registerTask('test:e2e', ['connect:testserver', 'karma:e2e']);
   grunt.registerTask('test', ['karma:unit', 'karma:midway', 'test:e2e']);
+  grunt.registerTask('test:unit', ['karma:unit']);
+  grunt.registerTask('test:midway', ['connect:testserver','karma:unit']);
+  grunt.registerTask('test:e2e', ['connect:testserver', 'karma:e2e']);
 
   //keeping these around for legacy use
+  grunt.registerTask('autotest', ['karma:unit_auto']);
   grunt.registerTask('autotest:unit', ['karma:unit_auto']);
   grunt.registerTask('autotest:midway', ['karma:midway_auto']);
   grunt.registerTask('autotest:e2e', ['karma:e2e_auto']);
-  grunt.registerTask('autotest', ['karma:unit_auto']);
 
   //installation-related
-  grunt.registerTask('install', ['shell:install','shell:font_awesome_fonts']);
+  grunt.registerTask('install', ['shell:npm_install','shell:bower_install','shell:font_awesome_fonts']);
 
   //defaults
   grunt.registerTask('default', ['dev']);
 
   //development
-  grunt.registerTask('dev', ['install','concat','watch']);
-  grunt.registerTask('server', ['connect:server']);
+  grunt.registerTask('dev', ['install', 'concat', 'connect:devserver', 'open:devserver', 'watch:assets']);
+
+  //server daemon
+  grunt.registerTask('serve', ['connect:webserver']);
 };

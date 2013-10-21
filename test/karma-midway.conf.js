@@ -5,7 +5,7 @@ module.exports = function(config) {
 
   config.files = shared.files.concat([
     //extra testing code
-    'components/ngMidwayTester/Source/ngMidwayTester.js',
+    'node_modules/ng-midway-tester/src/ngMidwayTester.js',
 
     //test files
     'test/midway/**/*.js'
