@@ -3,7 +3,7 @@
   "dependencies": {
     "components-font-awesome": "3.1.0",
     "bootstrap.css": "2.1.1",
-    "angularjs": "1.2.1",
+    "angular": "1.2.1",
     "angular-route": "1.2.1",
     "angular-mocks": "1.2.1",
     "angularjs-scope.safeapply": "*"

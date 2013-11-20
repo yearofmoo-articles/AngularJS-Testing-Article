@@ -13,10 +13,10 @@ module.exports = function(grunt) {
         stdout: true
       },
       npm_install: {
-        command: 'node ./node_modules/bower/bin/bower install'
+        command: 'npm install'
       },
       bower_install: {
-        command: './node_modules/.bin/bower update'
+        command: './node_modules/.bin/bower install'
       },
       font_awesome_fonts: {
         command: 'cp -R bower_components/components-font-awesome/font app/font'
