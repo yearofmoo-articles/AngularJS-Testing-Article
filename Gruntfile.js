@@ -111,8 +111,8 @@ module.exports = function(grunt) {
         },
         dest: './app/assets/app.js',
         src: [
-          'bower_components/angularjs/index.js',
-          'bower_components/angular-route/index.js',
+          'bower_components/angular/angular.js',
+          'bower_components/angular-route/angular-route.js',
           'bower_components/angularjs-scope.safeapply/src/Scope.SafeApply.js',
           'app/scripts/lib/router.js',
           'app/scripts/config/config.js',
