@@ -12,8 +12,8 @@ module.exports = function() {
     
     files : [
       //3rd Party Code
-      'bower_components/angularjs/index.js',
-      'bower_components/angular-route/index.js',
+      'bower_components/angular/angular.js',
+      'bower_components/angular-route/angular-route.js',
       'bower_components/angularjs-scope.safeapply/src/Scope.SafeApply.js',
       'app/scripts/lib/router.js',
 
