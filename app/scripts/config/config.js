@@ -2,7 +2,7 @@ var CONFIG;
 
 (function() {
 
-var appPrefix = 'app/';
+var appPrefix = '/';
 var templateUrlPrefix = 'templates/';
 var appVersion = 8;
 

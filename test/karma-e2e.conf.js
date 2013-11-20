@@ -1,14 +1,20 @@
-var shared = require('./karma-shared.conf');
+var sharedConfig = require('./karma-shared.conf');
 
 module.exports = function(config) {
-  shared(config);
+  var conf = sharedConfig();
 
-  config.set({
-    frameworks: ['ng-scenario'],
-    files: ['test/e2e/**/*.js'],
-    urlRoot: '/_karma_/',
-    proxies: {
-      '/': 'http://localhost:8000/'
-    }
-  });
+  conf.files = conf.files.concat([
+    //test files
+    './test/e2e/**/*.js'
+  ]);
+
+  conf.proxies = {
+    '/': 'http://localhost:9999/'
+  };
+
+  conf.urlRoot = '/__karma__/';
+
+  conf.frameworks = ['ng-scenario'];
+
+  config.set(conf);
 };

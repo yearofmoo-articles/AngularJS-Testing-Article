@@ -30,7 +30,7 @@
     "karma": "~0.10.2",
     "grunt-karma": "~0.6.2",
     "grunt-open": "~0.2.2",
-    "ng-midway-tester": "2.0.4",
+    "ng-midway-tester": "2.0.5",
     "bower": "~1.2.7"
   }
 }

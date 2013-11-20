@@ -1,13 +1,18 @@
-var shared = require('./karma-shared.conf');
+var sharedConfig = require('./karma-shared.conf');
 
 module.exports = function(config) {
-  shared(config);
+  var conf = sharedConfig();
 
-  config.files = shared.files.concat([
+  conf.files = conf.files.concat([
     //extra testing code
-    'components/angular-mocks/index.js',
+    'bower_components/angular-mocks/index.js',
+
+    //mocha stuff
+    'test/mocha.conf.js',
 
     //test files
     './test/unit/**/*.js'
   ]);
+
+  config.set(conf);
 };

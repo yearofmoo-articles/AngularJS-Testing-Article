@@ -2,22 +2,20 @@ angular.module('App.Controllers', [])
 
   .run(['$rootScope', '$appScope', function($rootScope, $appScope) {
     $rootScope.$on("$routeChangeStart", function(event, next, current) {
-      $appScope.topScope().onLoading();
+      $rootScope.onLoading();
     });
 
     $rootScope.onLoading = function() {
-      var $scope = $appScope.topScope();
-      $appScope.safeApply(function() {
-        $scope.loading = true;
-        $scope.status = 'loading';
+      $rootScope.$safeApply(function() {
+        $rootScope.loading = true;
+        $rootScope.status = 'loading';
       },this);
     };
 
     $rootScope.onReady = function() {
-      var $scope = $appScope.topScope();
-      $appScope.safeApply(function() {
-        $scope.loading = false;
-        $scope.status = 'ready';
+      $rootScope.$safeApply(function() {
+        $rootScope.loading = false;
+        $rootScope.status = 'ready';
       },this);
     };
   }])

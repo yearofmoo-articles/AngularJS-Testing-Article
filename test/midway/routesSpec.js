@@ -3,13 +3,14 @@
 //
 describe("Midway: Testing Routes", function() {
 
-  var test, onChange;
+  var tester;
+  beforeEach(function() {
+    tester = ngMidwayTester('App');
+  });
 
-  before(function(done) {
-    ngMidwayTester.register('App', function(instance) {
-      test = instance;
-      done();
-    });
+  afterEach(function() {
+    tester.destroy();
+    tester = null;
   });
 
   it("should have a working videos_path route", function() {
